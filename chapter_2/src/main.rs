@@ -1,12 +1,22 @@
-use num::complex::Complex;
+use std::time::{Duration, Instant};
 
 fn main() {
-    let a = Complex { re: 2.1, im: -1.2 };
-    let b = Complex::new(11.1, 22.2);
+    let mut count = 0;
+    let time_limit = Duration::new(1, 0);
+    let start = Instant::now();
 
-    let result = a + b;
+    while (Instant::now() - start) < time_limit {
+        count += 1;
+    }
 
-    println!("{} + {}i", result.re, result.im);
+    println!("{}", count);
+
+    // let a = Complex { re: 2.1, im: -1.2 };
+    // let b = Complex::new(11.1, 22.2);
+    //
+    // let result = a + b;
+    //
+    // println!("{} + {}i", result.re, result.im);
 
     // let a = 10;
     // let b: i32 = 10;
